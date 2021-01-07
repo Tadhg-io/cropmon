@@ -3,7 +3,7 @@ const express = require('express');
 
 // app constants
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 // publishing object
 const pubsub = new PubSub();
 
