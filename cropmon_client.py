@@ -46,18 +46,18 @@ def callback(channel):
                 print("LED off")
                 pubnub.publish()\
                 .channel("CROPS")\
-                .message({"sender": pnconfig.uuid, "content": "Hello From Python SDK"})\
+                .message({"sender": pnconfig.uuid, "content": "Moisture not detected."})\
                 .pn_async(my_publish_callback)
         else:
                 print("LED on")
 
-# This line tells our script to keep an eye on our gpio pin and let us know when the pin goes HIGH or LOW
+# keep an eye on our gpio pin
 GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=10)
-# This line asigns a function to the GPIO pin so that when the above line tells us there is a change on the pin, run this function
+# asign a function to the GPIO pin
 GPIO.add_event_callback(channel, callback)
 
-# This is an infinte loop to keep our script running
+# infinte loop to keep our script running
 while True:
-        #  sleep and do nothing
+        #  sleep and check the sensor
         time.sleep(600)
         callback(channel)
