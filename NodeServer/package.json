@@ -1,0 +1,19 @@
+{
+  "name": "cropmon",
+  "version": "1.0.0",
+  "description": "Plant Monitoring Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "firebase": "^8.2.1",
+    "firebase-admin": "^9.4.2",
+    "pubnub": "^4.29.10"
+  }
+}
